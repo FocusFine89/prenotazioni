@@ -21,7 +21,7 @@ public class Utenti {
     @Column(name = "email")
     protected String email;
 
-    @OneToMany(mappedBy = "prenotazione")
+    @OneToMany(mappedBy = "utente")
     protected List<Prenotazioni> prenotazione;
 
     //Costruttori
