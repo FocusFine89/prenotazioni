@@ -16,6 +16,7 @@ public class Postazioni {
     protected String description;
 
     @Column(name = "type")
+    @Enumerated(EnumType.STRING)
     protected PostazioniType type;
 
     @Column(name = "occupants")
