@@ -1,14 +1,13 @@
 package com.example.prenotazioni;
 
-import com.example.prenotazioni.entities.Edifici;
-import com.example.prenotazioni.entities.Postazioni;
-import com.example.prenotazioni.entities.PostazioniType;
-import com.example.prenotazioni.entities.Utenti;
+import com.example.prenotazioni.entities.*;
 import com.example.prenotazioni.services.GeneralService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class MyRunner implements CommandLineRunner {
@@ -70,7 +69,7 @@ public class MyRunner implements CommandLineRunner {
 //            System.out.println(ex.getMessage());
 //        }
 
-        System.out.println(generalService.PostazioniByTypeAndCity(PostazioniType.PRIVATO, "Milano"));
+      // System.out.println(generalService.PostazioniByTypeAndCity(PostazioniType.PRIVATO, "Milano"));
 
 
     }

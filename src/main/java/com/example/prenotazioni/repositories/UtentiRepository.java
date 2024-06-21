@@ -9,4 +9,6 @@ public interface UtentiRepository extends JpaRepository<Utenti, Long> {
 
     //DERIVED QUERIES
     boolean existsByUsername(String name);
+
+    Utenti findByUsername(String username);
 }
