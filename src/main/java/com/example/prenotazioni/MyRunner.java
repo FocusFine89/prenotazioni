@@ -1,5 +1,9 @@
 package com.example.prenotazioni;
 
+import com.example.prenotazioni.entities.Edifici;
+import com.example.prenotazioni.entities.Postazioni;
+import com.example.prenotazioni.entities.PostazioniType;
+import com.example.prenotazioni.entities.Utenti;
 import com.example.prenotazioni.services.GeneralService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -29,6 +33,45 @@ public class MyRunner implements CommandLineRunner {
 
 
         //Inizio a mettere edifici e postazioni nel database
+
+
+        //Aggiunta Postazioni nel DB
+//        Edifici edificio3 = generalService.findByName("edificio3");
+//        try{
+//           Postazioni postazione1 = new Postazioni("Postazione Privata", PostazioniType.PRIVATO,5, edificio3);
+//           generalService.savePostazione(postazione1);
+//
+//            Postazioni postazione2 = new Postazioni("Postazione Openspace", PostazioniType.OPENSPACE,10, edificio3);
+//            generalService.savePostazione(postazione1);
+//
+//            Postazioni postazione3 = new Postazioni("Postazione Sala Riunioni", PostazioniType.SALA_RIUNIONI,20, edificio3);
+//            generalService.savePostazione(postazione1);
+//
+//            generalService.savePostazione(postazione1);
+//            generalService.savePostazione(postazione2);
+//            generalService.savePostazione(postazione3);
+//
+//
+//        }catch (Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+
+        //Creazione Utenti
+//        try{
+//            Utenti utente1 = new Utenti("nikita","Nikita Ivanov","nikita@gmail.com");
+//            generalService.saveUtente(utente1);
+//
+//            Utenti utente2 = new Utenti("aldo","Aldo Moro","aldo@gmail.com");
+//            generalService.saveUtente(utente2);
+//
+//            Utenti utente3 = new Utenti("pacciani","Pietro Pacciani","pacciani@gmail.com");
+//            generalService.saveUtente(utente3);
+//        }catch (Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+
+        System.out.println(generalService.PostazioniByTypeAndCity(PostazioniType.PRIVATO, "Milano"));
+
 
     }
 }

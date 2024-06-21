@@ -5,14 +5,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface EdificiRepository extends JpaRepository<Edifici, Long> {
     //Già si hanno a disposizione i metodi CRUD
 
     //DERIVED QUERIS
-    List<Edifici> findByName(String name);
+    Edifici findByName(String name);
 
-    boolean existByName(String name);
+    boolean existsByName(String name);
 
 }

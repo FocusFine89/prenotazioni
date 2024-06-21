@@ -16,6 +16,7 @@ public class Prenotazioni {
     @Column(name = "data_prenotazione")
     protected LocalDate dataPrenotazione;
 
+
     @ManyToOne
     @JoinColumn(name = "postazione", nullable = false)
     protected Postazioni postazione;
@@ -36,8 +37,13 @@ public class Prenotazioni {
 
     //Metodi
 
+
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public LocalDate getDataPrenotazione() {
@@ -46,6 +52,22 @@ public class Prenotazioni {
 
     public void setDataPrenotazione(LocalDate dataPrenotazione) {
         this.dataPrenotazione = dataPrenotazione;
+    }
+
+    public Postazioni getPostazione() {
+        return postazione;
+    }
+
+    public void setPostazione(Postazioni postazione) {
+        this.postazione = postazione;
+    }
+
+    public Utenti getUtente() {
+        return utente;
+    }
+
+    public void setUtente(Utenti utente) {
+        this.utente = utente;
     }
 
     @Override

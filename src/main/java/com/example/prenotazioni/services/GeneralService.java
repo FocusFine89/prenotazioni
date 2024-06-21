@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GeneralService {
@@ -27,11 +28,18 @@ public class GeneralService {
 
     //Edifici
     public void saveEdificio(Edifici newEdificio){
-        if(edificiRepository.existByName(newEdificio.getName())){
+        if(edificiRepository.existsByName(newEdificio.getName())){
             throw new RuntimeException("l'edificio già esiste, prova a cambiargli il nome");
         }
         edificiRepository.save(newEdificio);
         System.out.println("L'edificio " + newEdificio.getName() + " aggiunto!");
+    }
+
+    public Edifici findEdificioByName(String name){
+        if(edificiRepository.findByName(name) == null){
+            throw new RuntimeException("Edificio non trovato");
+        }
+        return edificiRepository.findByName(name);
     }
 
 
@@ -45,14 +53,15 @@ public class GeneralService {
         return postazioniRepository.findByType(type);
     }
 
-    public List<Postazioni> findByTypeAndCity(PostazioniType type, String city){
-        return postazioniRepository.findByTypeAndCity(type, city);
+
+    public List<Postazioni> PostazioniByTypeAndCity(PostazioniType type, String city){
+        return postazioniRepository.findByTypeAndCity(type,city);
     }
 
 
     //Utenti
     public void saveUtente(Utenti newUtente){
-        if (utentiRepository.existByUsername(newUtente.getUsername())){
+        if (utentiRepository.existsByUsername(newUtente.getUsername())){
             throw  new RuntimeException("L'utente " + newUtente.getUsername() + "già esiste, prova a cambiare username!");
         }
         utentiRepository.save(newUtente);
@@ -60,13 +69,9 @@ public class GeneralService {
     }
 
     //Prenotazioni
+
     public void savePrenotazione(Prenotazioni newPrenotazione){
-        if()
+        prenotazioniRepository.save(newPrenotazione);
     }
-
-
-
-
-    //
 
 }

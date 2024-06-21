@@ -72,6 +72,22 @@ public class Postazioni {
         this.occupants = occupants;
     }
 
+    public Edifici getEdificio() {
+        return edificio;
+    }
+
+    public void setEdificio(Edifici edificio) {
+        this.edificio = edificio;
+    }
+
+    public List<Prenotazioni> getPrenotazione() {
+        return prenotazione;
+    }
+
+    public void setPrenotazione(List<Prenotazioni> prenotazione) {
+        this.prenotazione = prenotazione;
+    }
+
     @Override
     public String toString() {
         return "Postazioni{" +
@@ -79,6 +95,7 @@ public class Postazioni {
                 ", description='" + description + '\'' +
                 ", type=" + type +
                 ", occupants=" + occupants +
+                ", edificio=" + edificio +
                 '}';
     }
 }
