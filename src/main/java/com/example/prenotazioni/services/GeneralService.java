@@ -59,6 +59,10 @@ public class GeneralService {
         return postazioniRepository.findByTypeAndCity(type,city);
     }
 
+    public Postazioni findPostazioneById(long id){
+        return postazioniRepository.findById(id);
+    }
+
 
     //Utenti
     public void saveUtente(Utenti newUtente){

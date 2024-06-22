@@ -14,6 +14,7 @@ public interface PostazioniRepository extends JpaRepository<Postazioni, Long> {
 
     //DERIVED QUERIES
     List<Postazioni> findByType(PostazioniType type);
+    Postazioni findById(long id);
 
 
     // JPQL QUERIES

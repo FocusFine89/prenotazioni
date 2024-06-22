@@ -71,6 +71,9 @@ public class MyRunner implements CommandLineRunner {
 
       // System.out.println(generalService.PostazioniByTypeAndCity(PostazioniType.PRIVATO, "Milano"));
 
+        Prenotazioni prenotazione1 = new Prenotazioni(LocalDate.now(),generalService.findPostazioneById(3),generalService.findByUsername("nikita"));
+        generalService.savePrenotazione(prenotazione1);
+
 
     }
 }
